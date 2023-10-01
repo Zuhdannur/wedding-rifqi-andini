@@ -1,0 +1,8 @@
+-w -r2 -E3600 -O mywebsite https://menujuhalal.id/oky-lengga/
+File generated automatically on Sun, 01 Oct 2023 21:52:56, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+

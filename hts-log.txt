@@ -1,0 +1,12 @@
+HTTrack3.49-2 launched on Sun, 01 Oct 2023 21:52:56 at https://menujuhalal.id/oky-lengga/
+(httrack -w -r2 -E3600 -O mywebsite https://menujuhalal.id/oky-lengga/ )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+21:53:01	Warning: 	Link https://menujuhalal.id/oky-lengga/ not scanned (follow robots meta tag)
+
+HTTrack Website Copier/3.49-2 mirror complete in 5 seconds : 2 links scanned, 1 files written (169013 bytes overall) [26532 bytes received at 5306 bytes/sec], 169138 bytes transferred using HTTP compression in 2 files, ratio 15%
+(No errors, 1 warnings, 0 messages)
