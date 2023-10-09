@@ -1,0 +1,54 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.custom-wdp-mempelai {
+    text-align: center;
+    font-family:'Rouge Script', Sans-serif;
+    font-size: 54px;
+}
+
+.custom-space-1 {
+    height: 316px;
+}
+
+.custom-space-1-top {
+    margin-top: 150px;
+}
+
+@media (min-width: 576px) {
+   
+    .custom-wdp-mempelai {
+        text-align: center;
+        font-family:'Rouge Script', Sans-serif;
+    }
+
+    .custom-space-1 {
+        height: 500px;
+    }
+
+    .custom-space-1-top {
+        margin-top: 200px;
+    }
+    
+    
+}
+
+@media (min-width: 992px) {
+    .custom-wdp-mempelai {
+        text-align: center;
+        font-family:'Rouge Script', Sans-serif;
+    }
+
+    .custom-space-1 {
+        height: 800px;
+    }
+
+    .custom-space-1-top {
+        margin-top: 200px;
+    }
+    
+    
+}
+
