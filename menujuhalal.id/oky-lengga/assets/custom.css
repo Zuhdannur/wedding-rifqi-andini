@@ -1,7 +1,7 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
-    background-color: #e4ebf3 !important;
+    background-color: #DCDEDF !important;
 }
 
 .custom-wdp-mempelai {
@@ -34,6 +34,14 @@ html, body {
     }
     
     
+}
+
+.bg-silver  {
+    background: #DCDEDF !important;
+}
+
+.silver {
+    background-color: #DCDEDF !important;
 }
 
 @media (min-width: 992px) {
