@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
 <!-- Mirrored from menujuhalal.id/oky-lengga/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 01 Oct 2023 14:53:01 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
@@ -155,7 +155,8 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" /></head>
 <body data-rsssl=1 class="post-template post-template-elementor_canvas single single-post postid-93231 single-format-standard elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-93231 text-dark">
 			<div data-elementor-type="wp-post" data-elementor-id="93231" class="elementor elementor-93231">
-									<section class="elementor-section elementor-top-section elementor-element elementor-element-b86f487 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="b86f487" data-element_type="section" id="depan" data-settings="{&quot;classic&quot;}">
+
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-b86f487 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="b86f487" data-element_type="section" id="depan" data-settings="{&quot;classic&quot;}">
 							<!-- <div class="elementor-background-overlay"></div> -->
 							<div class="elementor-container elementor-column-gap-default">
 									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-36ce60fc wdp-sticky-section-no position-relative vh-100 w-100 d-flex justify-content-center" data-id="36ce60fc" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -201,8 +202,29 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 											var results = regex.exec(url);
 											return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 										}
+
+										
 									jQuery(document).ready(function ($) {
 										'use strict';
+
+										function _getData() {
+											$.ajax({
+												type: "GET",
+												url: "https://be-wedding-production.up.railway.app/expression", // Replace with your server's URL
+												contentType: "application/json",
+												success: function(response) {
+													$(".list-ucapan").empty();
+													response.data.map((x) => {
+														var el = '<div class="text-start px-5 ucapan-item pb-5"> <h6>'+ x.name+'</h6> <small class="text-muted">'+ x.message +'</small> </div>';
+														$(".list-ucapan").append(el);
+													})
+												},
+												error: function(error) {
+													alert('ucapan gagal dikirim')
+												}
+    										});
+										}
+
 										$("#wpkoi-elements-countdown-20596d61").countdown();
 										var url = window.location.href;
 
@@ -217,8 +239,45 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 
 
 										$("#invitation_to").text(nama)
+										$("#pengirimUcapan").val(nama);
 
 										$("#sesi").text(textSesi);
+										
+										_getData();
+										
+										$("#btnKirimUcapan").on('click',function(e) {
+											e.preventDefault();
+
+											var url = window.location.href;
+											var nama = getQueryParam(url,"nama");
+
+											var ucapan = $("#ucapan").val();
+											var formData = {
+												name : nama,
+												message : ucapan
+											}
+
+											$.ajax({
+												type: "POST",
+												url: "https://be-wedding-production.up.railway.app/expression", // Replace with your server's URL
+												data: JSON.stringify(formData),
+												contentType: "application/json",
+												success: function(response) {
+													alert('ucapan berhasil dikirim')
+												},
+												error: function(error) {
+													alert('ucapan gagal dikirim')
+												},
+												complete: function() {
+													var ucapan = $("#ucapan").val('');
+													_getData();
+												}
+    										});
+
+
+										});
+
+									
 
 									});
 									</script>
@@ -239,8 +298,9 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 										</div>
 									</div>
 							</div>
-			</section>
-			<section class="elementor-section elementor-top-section elementor-element elementor-element-3b42f952 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="3b42f952" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+				</section>
+
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-3b42f952 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="3b42f952" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 			<div class="elementor-container elementor-column-gap-default" style="background-color: #000 !important;">
 			<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-435f333d wdp-sticky-section-no" data-id="435f333d" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 					<div class="elementor-widget-wrap elementor-element-populated vh-100" style="background-color: #000 !important;">
@@ -256,7 +316,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 					</div>
 			</div>
 					</div>
-		</section>
+				</section>
 				
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-24cd37d4 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="24cd37d4" data-element_type="section" id="nama" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-default poso">
@@ -320,6 +380,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 		</div>
 							</div>
 				</section>
+
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-161619d7 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="161619d7" data-element_type="section" id="tanggal" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 					<!-- <div class="elementor-background-overlay"></div> -->
 					<div class="elementor-container elementor-column-gap-default">
@@ -363,6 +424,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 						</div>
 					</div>
 				</section>
+
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-24967a18 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="24967a18" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-default silver">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4c676a8a wdp-sticky-section-no" data-id="4c676a8a" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -443,6 +505,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 		</div>
 							</div>
 				</section>
+
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-6afca120 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="6afca120" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-default silver">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4d36feb3 wdp-sticky-section-no" data-id="4d36feb3" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -513,6 +576,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 		</div>
 							</div>
 				</section>
+
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-508f6491 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="508f6491" data-element_type="section" id="tempat" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-default">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-626c320e wdp-sticky-section-no" data-id="626c320e" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
@@ -566,6 +630,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 		</div>
 							</div>
 				</section>
+
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-780bcddd elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="780bcddd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 							<!-- <div class="elementor-background-overlay"></div> -->
 							<div class="elementor-container elementor-column-gap-default" style="background-color: white;">
@@ -826,6 +891,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 		</div>
 							</div>
 				</section>
+
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-2cecbeac elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="2cecbeac" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 							<!-- <div class="elementor-background-overlay"></div> -->
 							<div class="elementor-container elementor-column-gap-default" style="background-color: white !important;">
@@ -892,6 +958,37 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 					</div>
 		</div>
 							</div>
+				</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-6afca120 elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="6afca120" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+					<div class="elementor-container elementor-column-gap-default silver">
+						<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-4d36feb3 wdp-sticky-section-no vh-100" data-id="4d36feb3" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-widget-wrap elementor-element-populated" style="background-image: none !important;">
+								<div class="elementor-element elementor-element-2a8810b3 wdp-sticky-section-no elementor-invisible elementor-widget elementor-widget-image" style="padding-top: 2rem;" data-id="2a8810b3" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_animation_tablet&quot;:&quot;fadeInUp&quot;,&quot;_animation_mobile&quot;:&quot;fadeIn&quot;}" data-widget_type="image.default">
+									<div class="elementor-element elementor-element-35ae7480 wdp-sticky-section-no elementor-invisible elementor-widget elementor-widget-heading" data-id="35ae7480" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="heading.default">
+										<div class="elementor-widget-container">
+											<p class="elementor-heading-title elementor-size-default text-dark">Berikan Ucapan</p>		
+										</div>
+									</div>
+									<div class="elementor-element elementor-element-634b84f7 wdp-sticky-section-no elementor-invisible elementor-widget elementor-widget-image" data-id="634b84f7" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="image.default">
+										<div class="elementor-widget-container"><img decoding="async" loading="lazy" width="394" height="86" src="https://menujuhalal.id/wp-content/uploads/2023/03/tema-21E-1.png" class="attachment-full size-full wp-image-1498" alt="" srcset="https://menujuhalal.id/wp-content/uploads/2023/03/tema-21E-1.png 394w, https://menujuhalal.id/wp-content/uploads/2023/03/tema-21E-1-300x65.png 300w" sizes="(max-width: 394px) 100vw, 394px" />															
+										</div>
+									</div>
+									<div class="w-100 px-5 pt-5">
+										<input type="text"  class="form-control" id="pengirimUcapan" disabled>
+										<textarea id="ucapan" class="form-control" placeholder="ketik ucapan..." rows="5" ></textarea>
+									</div>
+									<div class="d-flex justify-content-end mt-1 mx-5">
+										<button id="btnKirimUcapan" type="button" class="text-white rounded py-2 px-4 bg-dark" style="background-color: #51293A;border-radius: 50%;font-size: 13px;font-family: Roboto;">Kirim Ucapan </button>
+									</div>
+
+									<div class="list-ucapan pt-5 mb-3">
+										
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
 				</section>
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-3a3138db elementor-section-boxed elementor-section-height-default elementor-section-height-default wdp-sticky-section-no" data-id="3a3138db" data-element_type="section">
 						<div class="elementor-container elementor-column-gap-default">
@@ -1012,7 +1109,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
             jQuery('body').css('overflow','hidden');
             jQuery('.wdp-button-wrapper button').on('click',function(){
                 jQuery('.modalx').addClass('removeModals');
-                jQuery('body').css('overflow','auto');
+                jQuery('body').css('overflow','hidden');
 
             });
         </script>
@@ -1054,6 +1151,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 		</div>
 							</div>
 				</section>
+
 			</div>
 			<link rel='stylesheet' id='e-animations-css' href='https://menujuhalal.id/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.11.2' media='all' />
 			<script src='https://menujuhalal.id/wp-content/plugins/weddingpress/assets/js/wdp-swiper.min.js' id='wdp-swiper-js-js'></script>

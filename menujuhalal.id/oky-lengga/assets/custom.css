@@ -18,8 +18,55 @@ html, body {
     margin-top: 150px;
 }
 
-@media (min-width: 576px) {
-   
+.bg-silver  {
+    background: #DCDEDF !important;
+}
+
+.silver {
+    background-color: #DCDEDF !important;
+}
+
+  
+
+  /* Default styles for all screen sizes (mobile-first) */
+  @media  screen and (min-width: 350px) {
+    .list-ucapan {
+        height: 200px !important;
+        overflow-y: auto;
+    }
+  }
+
+  @media  screen and (min-width: 360px) {
+    .list-ucapan {
+        height: 300px !important;
+        overflow-y: auto;
+    }
+  }
+
+  @media  screen and (min-width: 390px) {
+    .list-ucapan {
+        height: 375px !important;
+        overflow-y: auto;
+    }
+  }
+
+  @media  screen and (min-width: 400px) {
+    .list-ucapan {
+        height: 425px !important;
+        overflow-y: auto;
+    }
+  }
+
+  @media  screen and (min-width: 540px) {
+    .list-ucapan {
+        height: 250px !important;
+        overflow-y: auto;
+    }
+  }
+ 
+
+/* Styles for Small (sm) screens and up */
+@media  screen and (min-width: 576px) {
     .custom-wdp-mempelai {
         text-align: center;
         font-family:'Rouge Script', Sans-serif;
@@ -32,19 +79,42 @@ html, body {
     .custom-space-1-top {
         margin-top: 200px;
     }
-    
-    
-}
 
-.bg-silver  {
-    background: #DCDEDF !important;
-}
+    .list-ucapan {
+        height: 100px !important;
+        overflow-y: auto;
+    }
+  }
+  
+  /* Styles for Medium (md) screens and up */
+  @media (min-width: 768px) {
+    .list-ucapan {
+        height: 20% !important;
+        overflow-y: auto;
+    }
+  }
 
-.silver {
-    background-color: #DCDEDF !important;
-}
+  @media (min-width: 820px) {
+    .list-ucapan {
+        height: 28% !important;
+        overflow-y: auto;
+    }
+  }
 
-@media (min-width: 992px) {
+  @media (min-width: 912px) {
+    .list-ucapan {
+        height: 35% !important;
+        overflow-y: auto;
+    }
+  }
+  
+  /* Styles for Large (lg) screens and up */
+  @media (min-width: 992px) {
+    .list-ucapan {
+        height: 10% !important;
+        overflow-y: auto;
+    }
+
     .custom-wdp-mempelai {
         text-align: center;
         font-family:'Rouge Script', Sans-serif;
@@ -57,7 +127,14 @@ html, body {
     .custom-space-1-top {
         margin-top: 200px;
     }
-    
-    
-}
+   
+  }
+  
+  /* Styles for Extra Large (xl) screens and up */
+  @media (min-width: 1200px) {
+    .list-ucapan {
+        height: 10% !important;
+        overflow-y: auto;
+    }
+  }
 
