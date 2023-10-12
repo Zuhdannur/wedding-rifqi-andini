@@ -133,7 +133,7 @@ html, body {
   /* Styles for Extra Large (xl) screens and up */
   @media (min-width: 1200px) {
     .list-ucapan {
-        height: 10% !important;
+        height: 30% !important;
         overflow-y: auto;
     }
   }
