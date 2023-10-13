@@ -687,14 +687,24 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 
 		<script>
 		function copyText(el) {
-		    var content = jQuery(el).siblings('div.copy-content').html()
-		    var temp = jQuery("<textarea>");
-		    jQuery("body").append(temp);
-		    temp.val(content.replace(/<br ?\/?>/g, "\n")).select();
-		    document.execCommand("copy");
-		    temp.remove();
-		    var text = jQuery(el).html()
-		    jQuery(el).html(jQuery(el).data('message'))
+
+			const tempInput = document.createElement("input");
+			tempInput.value = jQuery(el).siblings('div.copy-content').html();
+			document.body.appendChild(tempInput);
+
+			// Select the text in the temporary input element
+			tempInput.select();
+			tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+			// Copy the selected text to the clipboard
+			document.execCommand("copy");
+
+			// Remove the temporary input element
+			document.body.removeChild(tempInput);
+
+			// Provide feedback to the user
+
+			jQuery(el).html(jQuery(el).data('message'))
 		    var counter = 0;
 		    var interval = setInterval(function() {
 		        counter++;
@@ -702,6 +712,23 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 		            jQuery(el).html(text)
 		        }
 		    }, 500);
+
+
+		    // var content = jQuery(el).siblings('div.copy-content').html()
+		    // var temp = jQuery("<textarea>");
+		    // jQuery("body").append(temp);
+		    // temp.val(content.replace(/<br ?\/?>/g, "\n")).select();
+		    // document.execCommand("copy");
+		    // temp.remove();
+		    // var text = jQuery(el).html()
+		    // jQuery(el).html(jQuery(el).data('message'))
+		    // var counter = 0;
+		    // var interval = setInterval(function() {
+		    //     counter++;
+		    //     if (counter == 1) {
+		    //         jQuery(el).html(text)
+		    //     }
+		    // }, 500);
 		}
 
 		</script>
@@ -756,14 +783,39 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 
 		<script>
 		function copyText(el) {
-		    var content = jQuery(el).siblings('div.copy-content').html()
-		    var temp = jQuery("<textarea>");
-		    jQuery("body").append(temp);
-		    temp.val(content.replace(/<br ?\/?>/g, "\n")).select();
-		    document.execCommand("copy");
-		    temp.remove();
-		    var text = jQuery(el).html()
-		    jQuery(el).html(jQuery(el).data('message'))
+		    // var content = jQuery(el).siblings('div.copy-content').html()
+		    // var temp = jQuery("<textarea>");
+		    // jQuery("body").append(temp);
+		    // temp.val(content.replace(/<br ?\/?>/g, "\n")).select();
+		    // document.execCommand("copy");
+		    // temp.remove();
+		    // var text = jQuery(el).html()
+		    // jQuery(el).html(jQuery(el).data('message'))
+		    // var counter = 0;
+		    // var interval = setInterval(function() {
+		    //     counter++;
+		    //     if (counter == 1) {
+		    //         jQuery(el).html(text)
+		    //     }
+		    // }, 500);
+
+			const tempInput = document.createElement("input");
+			tempInput.value = jQuery(el).siblings('div.copy-content').html();
+			document.body.appendChild(tempInput);
+
+			// Select the text in the temporary input element
+			tempInput.select();
+			tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+			// Copy the selected text to the clipboard
+			document.execCommand("copy");
+
+			// Remove the temporary input element
+			document.body.removeChild(tempInput);
+
+			// Provide feedback to the user
+
+			jQuery(el).html(jQuery(el).data('message'))
 		    var counter = 0;
 		    var interval = setInterval(function() {
 		        counter++;
@@ -852,14 +904,32 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 
 		<script>
 		function copyText(el) {
-		    var content = jQuery(el).siblings('div.copy-content').html()
-		    var temp = jQuery("<textarea>");
-		    jQuery("body").append(temp);
-		    temp.val(content.replace(/<br ?\/?>/g, "\n")).select();
-		    document.execCommand("copy");
-		    temp.remove();
-		    var text = jQuery(el).html()
-		    jQuery(el).html(jQuery(el).data('message'))
+		    // var content = jQuery(el).siblings('div.copy-content').html()
+		    // var temp = jQuery("<textarea>");
+		    // jQuery("body").append(temp);
+		    // temp.val(content.replace(/<br ?\/?>/g, "\n")).select();
+		    // document.execCommand("copy");
+		    // temp.remove();
+		    // var text = jQuery(el).html()
+		    
+
+			const tempInput = document.createElement("input");
+			tempInput.value = jQuery(el).siblings('div.copy-content').html();
+			document.body.appendChild(tempInput);
+
+			// Select the text in the temporary input element
+			tempInput.select();
+			tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+			// Copy the selected text to the clipboard
+			document.execCommand("copy");
+
+			// Remove the temporary input element
+			document.body.removeChild(tempInput);
+
+			// Provide feedback to the user
+
+			jQuery(el).html(jQuery(el).data('message'))
 		    var counter = 0;
 		    var interval = setInterval(function() {
 		        counter++;
@@ -867,6 +937,8 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 		            jQuery(el).html(text)
 		        }
 		    }, 500);
+
+			
 		}
 
 		</script>
