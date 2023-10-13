@@ -215,7 +215,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 												success: function(response) {
 													$(".list-ucapan").empty();
 													response.data.map((x) => {
-														var el = '<div class="text-start px-5 ucapan-item pb-5"> <h6>'+ x.name+'</h6> <small class="text-muted">'+ x.message +'</small> </div>';
+														var el = '<div class="text-start px-5 ucapan-item pb-5"> <h6>'+ x.name+'</h6> <small class="text-muted" style="word-break: break-word;">'+ x.message +'</small> </div>';
 														$(".list-ucapan").append(el);
 													})
 												},
