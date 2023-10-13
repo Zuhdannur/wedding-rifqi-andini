@@ -268,7 +268,8 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 													alert('ucapan gagal dikirim')
 												},
 												complete: function() {
-													var ucapan = $("#ucapan").val('');
+													$("#ucapan").val('');
+													$("#pengirimUcapan").val(''),
 													_getData();
 												}
     										});
@@ -1045,7 +1046,7 @@ var pp = {"ajax_url":"https:\/\/menujuhalal.id\/wp-admin\/admin-ajax.php"};
 										</div>
 									</div>
 									<div class="w-100 px-5 pt-5">
-										<input type="text"  class="form-control" id="pengirimUcapan">
+										<input type="text"  class="form-control" id="pengirimUcapan" placeholder="Ketik Nama...">
 										<textarea id="ucapan" class="form-control" placeholder="ketik ucapan..." rows="5" ></textarea>
 									</div>
 									<div class="d-flex justify-content-end mt-1 mx-5">
